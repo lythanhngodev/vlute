@@ -20,6 +20,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="plugin/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/animate.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="plugin/bower_components/morris.js/morris.css">
   <!-- jvectormap -->
@@ -162,6 +163,30 @@
           </ul>
         </li>
       <?php if ($quyen_user=='1') { ?>
+        <li class="treeview" id="khoabomon">
+          <a href="#">
+            <i class="fa fa-graduation-cap"></i>
+            <span>Quản lý khoa - bộ môn</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+             <li><a href="?p=khoabomon"><i class="fa fa-circle-o"></i> Danh sách khoa - bộ môn</a></li> 
+          </ul>
+        </li>
+        <li class="treeview" id="giaovien">
+          <a href="#">
+            <i class="fa fa-graduation-cap"></i>
+            <span>Quản lý giáo viên</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+             <li><a href="?p=giaovien"><i class="fa fa-circle-o"></i> Danh sách giáo viên</a></li> 
+          </ul>
+        </li>
         <li class="treeview" id="thanhvien">
           <a href="#">
             <i class="fa fa-users"></i>
@@ -199,6 +224,10 @@
         include_once('control/ctrl_sua_thanh_vien.php');
       else if(isset($_GET['p']) && $_GET['p']=='slider')
         include_once('control/ctrl_slider.php');
+      else if(isset($_GET['p']) && $_GET['p']=='giaovien')
+        include_once('control/ctrl_giao_vien.php');
+      else if(isset($_GET['p']) && $_GET['p']=='khoabomon')
+        include_once('control/ctrl_khoa_bo_mon.php');
       else
         include_once("control/ctrl_trang_chu.php");
      ?>

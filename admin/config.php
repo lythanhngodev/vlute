@@ -1,6 +1,6 @@
 <?php 
 	$vlute = array(
-		'HOST' => 'http://localhost/vlute3/admin' 
+		'HOST' => 'http://localhost/vlute/admin' 
 	);
 
 	class clsKetnoi
