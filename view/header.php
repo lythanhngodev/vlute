@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<base href="http://localhost/vlute3/" />
+<base href="http://localhost/vlute/" />
 <link rel="icon" href="images/favicon.ico" type="image/x-ico"/>
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css">

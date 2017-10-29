@@ -1,0 +1,4 @@
+RewriteEngine On
+ErrorDocument 404 http://localhost/vlute
+
+RewriteRule "^khoa-bo-mon/(.*)-(.*).vlute$" "?v=khoa-bo-mon&id=$2&ten=$1"

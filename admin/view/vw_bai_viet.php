@@ -1,10 +1,5 @@
 <link rel="stylesheet" href="css/datatables.min.css">
 <script src="js/datatables.min.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8">
-      $(document).ready(function() {
-        $('#vlute').DataTable();
-      } );
-</script>
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -107,4 +102,9 @@
 	$(document).ready(function() {
     	$("#baiviet").addClass("active");
 	});
+</script>
+<script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('#vlute').DataTable();
+      } );
 </script>

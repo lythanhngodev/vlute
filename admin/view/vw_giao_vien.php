@@ -1,10 +1,6 @@
 <link rel="stylesheet" href="css/datatables.min.css">
 <script src="js/datatables.min.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8">
-      $(document).ready(function() {
-        $('#vlute').DataTable();
-      } );
-</script>
+
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -48,7 +44,7 @@
                     <td class="giua"><?php echo $row['trinhdochuyenmon']; ?></td>
                     <td class="giua"><?php echo $row['chucvuchucnang']; ?></td>
                     <td class="giua"><a href="mailto:<?php echo $row['lienhe']; ?>" target="_blank"><u><?php echo $row['lienhe']; ?></u></a></td>
-                    <td class="giua"><a class="btn btn-primary sua-gv" title="Sửa" data-vlute="<?php echo $row['idgv']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <td class="giua"><a class="sua-gv btn btn-primary" title="Sửa" data-vlute="<?php echo $row['idgv']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                         <a class="btn btn-danger xoa-gv" title="Xóa" data-vlute="<?php echo $row['idgv']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                     <input type="text" hidden="hidden" name="" id="ho-ten-id-<?php echo $row['idgv']; ?>" value="<?php echo $row['hoten']; ?>">
@@ -240,4 +236,9 @@
         $("#vlute-xoa-gv").modal("show");
       });
 	});
+</script>
+<script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('#vlute').DataTable();
+      } );
 </script>

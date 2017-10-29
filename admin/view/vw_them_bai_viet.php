@@ -101,8 +101,6 @@
 
 <script type="text/javascript">
     function BrowseServer() {
-
-        //finder.basePath = 'http://localhost:8080/vlute3/';
         finder.selectActionFunction = SetFileField;
         finder.popup();
     }

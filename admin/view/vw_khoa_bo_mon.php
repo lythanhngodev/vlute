@@ -2,11 +2,7 @@
 <script src="js/datatables.min.js" type="text/javascript"></script>
 <script src="ckeditor/ckeditor.js"></script>
 <script src="ckfinder/ckfinder.js"></script>
-<script type="text/javascript" charset="utf-8">
-      $(document).ready(function() {
-        $('#vlute').DataTable();
-      } );
-</script>
+
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -63,7 +59,7 @@
       </div>
     </section>
 
-<!-- Modal: Chỉnh sửa khoa - bộ môn -->
+<!-- Modal: Thêm khoa - bộ môn -->
 <div class="modal fade" id="vlute-modal-them-khoa-bo-mon" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <!-- Modal content-->
@@ -110,13 +106,12 @@
           <button class="btn btn-primary" id="" onclick="BrowseServer_them()">Chọn từ ...</button>
           <p class="help-block">Nên chọn hình ảnh có kích thước 720px x 287px.</p>
           <img src="../images/slider-mac-dinh.jpg" id="id-hinhanh-edit">
-          <input type="text" hidden="hidden" name="" value="images/slider-mac-dinh.jpg" id="id-hinhanh-ct-edit">
+          <input type="text" hidden="hidden" name="" value="images/slider-mac-dinh.jpg" id="id-hinhanh-ct-them">
         </div>
       </div>
-        <input type="text" hidden="hidden" name="" value="" id="id-id">
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-        <button type="button" class="btn btn-primary" id="sua-slider">Hoàn tất</button>
+        <button type="button" class="btn btn-primary" id="them-khoa-bo-mon">Hoàn tất</button>
       </div>
     </div>
   </div>
@@ -158,7 +153,7 @@
         </div>
         <div class="form-group">
           <label>Mô tả khác</label>
-          <textarea class="form-control" id="mo-ta-khac-them"></textarea>
+          <textarea class="form-control" id="mo-ta-khac-sua"></textarea>
         </div>
         <div class="form-group">
         <div class="form-group">
@@ -204,7 +199,7 @@
         var host = "<?php echo $vlute['HOST']; ?>";
         host = host.substr(0,host.lastIndexOf("\/"));
         //alert(fileUrl.substr(host.length+1,fileUrl.length-host.length));
-        document.getElementById('id-hinhanh-ct-edit').value=fileUrl.substr(host.length+1,fileUrl.length-host.length);
+        document.getElementById('id-hinhanh-ct-them').value=fileUrl.substr(host.length+1,fileUrl.length-host.length);
     }
 </script>
 <script type="text/javascript">
@@ -216,8 +211,36 @@
       $("#themkhoabomon").click(function(){
         $("#vlute-modal-them-khoa-bo-mon").modal("show");
       });
+      $("#them-khoa-bo-mon").click(function(){
+        // ajax
+        $.ajax({
+          url : "ajax/ajax_them_khoa_bo_mon.php",
+          type : "post",
+          dataType:"text",
+          data : {
+            ten: $("#ten-khoa-bo-mon-them").val(),
+            tenen: $("#ten-tieng-anh-them").val(),
+            diachi: $("#dia-chi-them").val(),
+            dienthoai: $("#dien-thoai-them").val(),
+            mail: $("#mail-them").val(),
+            ngaylap: $("#ngay-thanh-lap-them").val(),
+            mota: $("#mo-ta-khac-them").val(),
+            link: $("#link-lien-ket-them").val(),
+            hinh: $("#id-hinhanh-ct-them").val()
+          },
+          success : function (data){
+              alert(data);
+              location.reload();
+          }
+        });
+      });
       $(".suakhoabomon").click(function(){
         $("#vlute-modal-sua-khoa-bo-mon").modal("show");
       });
 	});
+</script>
+<script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('#vlute').DataTable();
+      } );
 </script>

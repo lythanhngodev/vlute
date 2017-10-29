@@ -3,6 +3,7 @@
   <div class="bao-trinh-chieu" style="float: left;">
   	<?php if (isset($_GET['v']) && $_GET['v'] == 'khoa-bo-mon' && isset($_GET['id']) && !empty($_GET['id'])){
         //thông tin khoa bộ môn
+        include_once('model/md_khoa_bo_mon.php');
         include_once('view/khoa-bo-mon.php');
     }else{
       include_once('view/vlu-content-left.php');

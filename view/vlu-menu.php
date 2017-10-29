@@ -1,6 +1,6 @@
 <div id="vlu-menu">
 	  <ul><li id="menu-button"><a>Menu</a></li>
-	     <li class="active"><a href="#" target="_blank"><span><i class="fa fa-fw fa-home"></i> TRANG CHỦ</span></a></li>
+	     <li class="active"><a href="#"><span><i class="fa fa-fw fa-home"></i> TRANG CHỦ</span></a></li>
 	     <li class="has-sub"><a href="#"><span>GIỚI THIỆU</span></a>
 	        <ul>
 	           <li><a href="#"><span>Ban giám hiệu</span></a></li>

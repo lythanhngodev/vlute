@@ -44,16 +44,15 @@
     <div id="content"> 
         <div id="tab-khoa-bo-mon" style="display: block;">
             <ul class="vlu-tab-list">
-    			<li><a href="khoa-bo-mon/25-khoa-khoa-hoc-co-ban">Khoa Khoa học cơ bản</a></li>
-    			<li><a href="khoa-bo-mon/26-khoa-ly-luan-chinh-tri">Khoa Lý luận chính trị</a></li>
-    			<li><a href="http://faet.vlute.edu.vn" target="_blank" rel="alternate noopener noreferrer">Khoa Cơ khí Động lực</a></li>
-    			<li><a href="http://fmet.vlute.edu.vn" target="_blank" rel="alternate noopener noreferrer">Khoa Cơ khí Chế tạo máy</a></li>
-    			<li><a href="khoa-bo-mon/29-khoa-dien-dien-tu">Khoa Điện – Điện tử</a></li>
-    			<li><a href="khoa-bo-mon/30-khoa-su-pham">Khoa Sư phạm</a></li>
-    			<li><a href="http://fit.vlute.edu.vn" target="_blank" rel="alternate noopener noreferrer">Khoa Công nghệ thông tin</a></li>
-    			<li><a href="khoa-bo-mon/32-khoa-cong-nghe-thuc-pham">Khoa Công nghệ thực phẩm</a></li>
-    			<li><a href="khoa-bo-mon/33-bo-mon-giao-duc-the-chat-va-giao-duc-quoc-phong">Bộ môn Giáo dục thể chất và GDQP</a></li>
-    			<li><a href="khoa-bo-mon/34-bo-mon-ngoai-ngu">Bộ môn Ngoại ngữ</a></li>
+                
+                <?php 
+                    $khoabomon = get_khoa_bm();
+                    while ($row = mysqli_fetch_assoc($khoabomon)) {
+                ?>
+                <li><a href="khoa-bo-mon/<?php echo $row['tenkhoa']; ?>-<?php echo $row['idkhoa']; ?>.vlute"><?php echo $row['tenkhoa']; ?></a></li>
+                <?php
+                    }
+                 ?>
     		</ul>  
         </div>
         <div id="tab-phong-ban" style="display: block;">
