@@ -20,16 +20,16 @@
         <div class="col-md-12 col-ms-12 cach"></div>
       </div>
       <div class="windows-table">
-        <table id="vlute" class="table table-striped table-bordered">
+        <table id="vlute" class="table" style="font-size: 12px;">
             <thead>
                 <tr role="row">
                   <tr style="background-color: #3c8dbc;color: #fff;">
                     <th class="giua">STT</th>
-                    <th class="giua">Tên khoa</th>
-                    <th class="giua">Tên tiếng anh</th>
-                    <th class="giua">Địa chỉ</th>
+                    <th class="giua" style="width: 200px;">Tên khoa</th>
+                    <th class="giua" style="width: 200px;">Tên tiếng anh</th>
+                    <!--<th class="giua">Địa chỉ</th>-->
                     <th class="giua">Điện thoại</th>
-                    <th class="giua">Mail</th>
+                    <th class="giua" >Mail</th>
                     <th class="giua">Thao tác</th>
                   </tr>
                 </tr>
@@ -41,14 +41,15 @@
                 ?>
                   <tr>
                     <th class="giua"><?php echo $stt; ?></th>
-                    <td><a><?php echo $row['tenkhoa']; ?></a></td>
-                    <td class="giua"><?php echo $row['tentienganh']; ?></td>
-                    <td class="giua"><?php echo $row['diachi']; ?></td>
-                    <td class="giua"><?php echo $row['dienthoai']; ?></td>
-                    <td class="giua"><a href="mailto:<?php echo $row['mail']; ?>" target="_blank"><u><?php echo $row['mail']; ?></u></a></td>
+                    <td id="id-ten-khoa-<?php echo $row['idkhoa']; ?>"><a><?php echo $row['tenkhoa']; ?></a></td>
+                    <td id="id-ten-tieng-anh-<?php echo $row['idkhoa']; ?>"><?php echo $row['tentienganh']; ?></td>
+                    
+                    <td id="id-dien-thoai-<?php echo $row['idkhoa']; ?>" class="giua"><?php echo $row['dienthoai']; ?></td>
+                    <td id="id-mail-<?php echo $row['idkhoa']; ?>" class="giua"><a href="mailto:<?php echo $row['mail']; ?>" target="_blank"><u><?php echo $row['mail']; ?></u></a></td>
                     <td class="giua"><a class="btn btn-primary suakhoabomon" title="Sửa" data-vlute="<?php echo $row['idkhoa']; ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                         <a class="btn btn-danger xoa-gv" title="Xóa" data-vlute="<?php echo $row['idkhoa']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
+                    <input type="hidden" value="<?php echo $row['diachi'] ?>" id="id-dia-chi-<?php echo $row['idkhoa'] ?>" name="">
                 </tr>
                 <?php
                 $stt++;
@@ -60,7 +61,7 @@
     </section>
 
 <!-- Modal: Thêm khoa - bộ môn -->
-<div class="modal fade" id="vlute-modal-them-khoa-bo-mon" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="vlute-modal-them-khoa-bo-mon" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <!-- Modal content-->
     <div class="modal-content">
@@ -118,7 +119,7 @@
 </div><!-- Modal: Thêm khoa - bộ môn -->
 
 <!-- Modal: Thêm khoa - bộ môn -->
-<div class="modal fade" id="vlute-modal-sua-khoa-bo-mon" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="vlute-modal-sua-khoa-bo-mon" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <!-- Modal content-->
     <div class="modal-content">

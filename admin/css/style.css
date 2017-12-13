@@ -57,6 +57,9 @@
     cursor: pointer;
     color: #2793e8;
  }
+ .giua .btn,.btn{
+    padding: 3px 8px;
+ }
  .khung-slider:hover{
     transition: all 0.4s;
     -moz-transition: all 0.4s;
