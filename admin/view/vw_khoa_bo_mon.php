@@ -134,27 +134,27 @@
       <div class="modal-body">
         <div class="form-group">
           <label>Tên khoa</label>
-          <input type="text" class="form-control" name="" id="ten-khoa-bo-mon-them" placeholder="tên khoa - bộ môn" required autocomplete="on">
+          <input type="text" class="form-control" name="" id="ten-khoa-bo-mon-sua" placeholder="tên khoa - bộ môn" required autocomplete="on">
         </div>
         <div class="form-group">
           <label>Tên tiếng anh</label>
-          <input type="text" class="form-control" name="" id="ten-tieng-anh-them" placeholder="tên tiếng anh" required autocomplete="on">
+          <input type="text" class="form-control" name="" id="ten-tieng-anh-sua" placeholder="tên tiếng anh" required autocomplete="on">
         </div>
         <div class="form-group">
           <label>Địa chỉ</label>
-          <input type="text" class="form-control" name="" id="dia-chi-them" placeholder="địa chỉ" required autocomplete="on">
+          <input type="text" class="form-control" name="" id="dia-chi-sua" placeholder="địa chỉ" required autocomplete="on">
         </div>
         <div class="form-group">
           <label>Điện thoại</label>
-          <input type="text" class="form-control" name="" id="dien-thoai-them" placeholder="điện thoại" required autocomplete="on">
+          <input type="text" class="form-control" name="" id="dien-thoai-sua" placeholder="điện thoại" required autocomplete="on">
         </div>
         <div class="form-group">
           <label>Mail</label>
-          <input type="text" class="form-control" name="" id="mail-them" placeholder="địa chỉ mail" required autocomplete="on">
+          <input type="text" class="form-control" name="" id="mail-sua" placeholder="địa chỉ mail" required autocomplete="on">
         </div>
         <div class="form-group">
           <label>Ngày thành lập</label>
-          <input type="date" class="form-control" name="" id="ngay-thanh-lap-them" required autocomplete="on">
+          <input type="date" class="form-control" name="" id="ngay-thanh-lap-sua" required autocomplete="on">
         </div>
         <div class="form-group">
           <label>Mô tả khác</label>
@@ -163,13 +163,13 @@
         <div class="form-group">
         <div class="form-group">
           <label>Link liên kết</label>
-          <input type="text" class="form-control" name="" id="link-lien-ket-them" placeholder="link liên kết" required autocomplete="on">
+          <input type="text" class="form-control" name="" id="link-lien-ket-sua" placeholder="link liên kết" required autocomplete="on">
         </div>
           <label>Chọn hình ảnh</label><br>
-          <button class="btn btn-primary" id="" onclick="BrowseServer_them()">Chọn từ ...</button>
+          <button class="btn btn-primary" id="" onclick="BrowseServer_sua()">Chọn từ ...</button>
           <p class="help-block">Nên chọn hình ảnh có kích thước 720px x 287px.</p>
-          <img src="../images/slider-mac-dinh.jpg" id="id-hinhanh-edit">
-          <input type="text" hidden="hidden" name="" value="images/slider-mac-dinh.jpg" id="id-hinhanh-ct-edit">
+          <img src="../images/slider-mac-dinh.jpg" id="id-hinhanh-sua">
+          <input type="text" hidden="hidden" name="" value="images/slider-mac-dinh.jpg" id="id-hinhanh-ct-sua">
         </div>
       </div>
         <input type="text" hidden="hidden" name="" value="" id="id-id">
@@ -191,9 +191,9 @@
     });
 </script>
 <script type="text/javascript">
-    document.title = "VLUTE | Quản lý Slider";
+    document.title = "VLUTE | Quản lý khoa bộ môn";
     var finder = new CKFinder();
-    // Sua
+    // Thêm
     function BrowseServer_them() {
         //finder.basePath = 'http://localhost:8080/vlute3/';
         finder.selectActionFunction = SetFileField_them;
@@ -205,6 +205,18 @@
         host = host.substr(0,host.lastIndexOf("\/"));
         //alert(fileUrl.substr(host.length+1,fileUrl.length-host.length));
         document.getElementById('id-hinhanh-ct-them').value=fileUrl.substr(host.length+1,fileUrl.length-host.length);
+    }
+    function BrowseServer_sua() {
+        //finder.basePath = 'http://localhost:8080/vlute3/';
+        finder.selectActionFunction = SetFileField_sua;
+        finder.popup();
+    }
+    function SetFileField_sua(fileUrl) {
+        document.getElementById('id-hinhanh-sua').src = fileUrl;
+        var host = "<?php echo $vlute['HOST']; ?>";
+        host = host.substr(0,host.lastIndexOf("\/"));
+        //alert(fileUrl.substr(host.length+1,fileUrl.length-host.length));
+        document.getElementById('id-hinhanh-ct-sua').value=fileUrl.substr(host.length+1,fileUrl.length-host.length);
     }
 </script>
 <script type="text/javascript">
@@ -240,6 +252,15 @@
         });
       });
       $(".suakhoabomon").click(function(){
+        var id = $(this).attr('data-vlute');
+        $("#ten-khoa-bo-mon-sua").val($("#id-ten-khoa-"+id).text().trim());
+        $("#ten-tieng-anh-sua").val($("#id-ten-tieng-anh-"+id).text().trim());
+        $("#dia-chi-sua").val($("#id-dia-chi-"+id).val().trim());
+        $("#dien-thoai-sua").val($("#id-dien-thoai-"+id).text().trim());
+        $("#mail-sua").val($("#id-mail-"+id).text().trim());
+        $("#ngay-thanh-lap-sua").val($("#id-ngay-thanh-lap-"+id).val().trim());
+        $("#mo-ta-khac-sua").val($("#id-mo-ta-khac-"+id).val().trim());
+        $("#link-lien-ket-sua").val($("#id-link-"+id).val().trim());
         $("#vlute-modal-sua-khoa-bo-mon").modal("show");
       });
 	});

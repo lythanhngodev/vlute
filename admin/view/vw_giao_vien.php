@@ -18,7 +18,7 @@
         <div class="col-md-12 col-ms-12 cach"></div>
       </div>
       <div class="windows-table">
-        <table id="vlute" class="table table-striped table-bordered">
+        <table id="vlute" class="table">
             <thead>
                 <tr role="row">
                   <tr style="background-color: #3c8dbc;color: #fff;">
@@ -28,7 +28,7 @@
                     <th class="giua">Trình độ chuyên môn</th>
                     <th class="giua">Chức vụ chức năng</th>
                     <th class="giua">Liên hệ</th>
-                    <th class="giua">Chức năng</th>
+                    <th class="giua" style="width: 80px;">Chức năng</th>
                   </tr>
                 </tr>
             </thead>
