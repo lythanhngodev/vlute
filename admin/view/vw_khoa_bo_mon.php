@@ -50,6 +50,10 @@
                         <a class="btn btn-danger xoa-gv" title="Xóa" data-vlute="<?php echo $row['idkhoa']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
                     </td>
                     <input type="hidden" value="<?php echo $row['diachi'] ?>" id="id-dia-chi-<?php echo $row['idkhoa'] ?>" name="">
+                    <input type="hidden" value="<?php echo $row['ngaythanhlap'] ?>" id="id-ngay-thanh-lap-<?php echo $row['idkhoa'] ?>" name="">
+                    <textarea hidden="hidden" id="id-mo-ta-khac-<?php echo $row['idkhoa'] ?>"><?php echo $row['motakhac'] ?></textarea>
+                    <input type="hidden" value="<?php echo $row['hinhanhkhoa'] ?>" id="id-hinh-anh-khoa-<?php echo $row['idkhoa'] ?>" name="">
+                    <input type="hidden" value="<?php echo $row['link'] ?>" id="id-link-<?php echo $row['idkhoa'] ?>" name="">
                 </tr>
                 <?php
                 $stt++;
@@ -62,7 +66,7 @@
 
 <!-- Modal: Thêm khoa - bộ môn -->
 <div class="modal" id="vlute-modal-them-khoa-bo-mon" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -120,7 +124,7 @@
 
 <!-- Modal: Thêm khoa - bộ môn -->
 <div class="modal" id="vlute-modal-sua-khoa-bo-mon" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
